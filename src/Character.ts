@@ -1,6 +1,6 @@
 import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
-import Fighter from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 import Race, { Elf } from './Races';
 import getRandomInt from './utils';
 
@@ -51,7 +51,7 @@ export default class Character implements Fighter {
     return this.lifePoints;
   }
 
-  attack(enemy: Fighter) { enemy.receiveDamage(this.strength); }
+  attack(enemy: SimpleFighter) { enemy.receiveDamage(this.strength); }
 
   levelUp() {
     this._maxLifePoints += getRandomInt(1, 10);
@@ -66,7 +66,7 @@ export default class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  special(enemy: Fighter): void {
+  special(enemy: SimpleFighter): void {
     const energySpent = 2;
     if (this._energy.amount < energySpent) {
       console.log('I don\'t have enough mana');
