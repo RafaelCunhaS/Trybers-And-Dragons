@@ -72,7 +72,7 @@ export default class Character implements Fighter {
       console.log('I don\'t have enough mana');
     } else {
       this._energy.amount -= energySpent;
-      const damage = this.strength * getRandomInt(2, 5);
+      const damage = this.strength * getRandomInt(3, 6);
       enemy.receiveDamage(damage);
     }
   }
