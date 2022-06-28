@@ -12,7 +12,7 @@ class F implements Fighter {
   levelUp(): void { }
   special(enemy: SimpleFighter): void { }
   attack(enemy: SimpleFighter): void { }
-  receiveDamage(amount: number): void { }
+  receiveDamage(amount: number): number { return 0; }
 }
 
 class S implements SimpleFighter {
@@ -21,7 +21,7 @@ class S implements SimpleFighter {
     public strength = 10,
   ) { }
   attack(enemy: SimpleFighter): void { }
-  receiveDamage(amount: number): void { }
+  receiveDamage(amount: number): number { return 0; }
 }
 
 const pve1 = new PVE(new Character(''), [new Monster()]);
