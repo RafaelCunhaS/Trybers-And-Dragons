@@ -26,6 +26,8 @@ export default class Character implements Fighter {
     this._energy.amount = getRandomInt(1, 10);
   }
 
+  get name(): string { return this._name; }
+
   get race(): Race { return this._race; }
 
   get archetype(): Archetype { return this._archetype; }
