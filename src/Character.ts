@@ -12,7 +12,7 @@ export default class Character implements Fighter {
   private _strength: number;
   private _defense: number;
   private _dexterity: number;
-  private _energy: Energy = { type_: 'mana', amount: 0 };
+  private _energy: Energy;
 
   constructor(private _name: string) {
     this._dexterity = getRandomInt(1, 10);
@@ -22,8 +22,8 @@ export default class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
     this._strength = getRandomInt(1, 10);
     this._defense = getRandomInt(1, 10);
-    this._energy.type_ = this._archetype.energyType;
-    this._energy.amount = getRandomInt(1, 10);
+    this._energy = { type_: this._archetype.energyType, 
+      amount: getRandomInt(1, 10) };
   }
 
   get name(): string { return this._name; }
